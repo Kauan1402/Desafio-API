@@ -1,38 +1,92 @@
-.App {
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f8f8f8;
+  margin: 0;
+  padding: 0;
+}
+
+/* Cabeçalho */
+.header {
+  background-color: #6ed023;
+  padding: 20px;
   text-align: center;
+  color: #fbfafa;
+  font-size: 24px;
+  font-weight: bold;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Container*/
+.container {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin: 20px;
+}
+
+/* Artigo de cada personagem) */
+.artigo {
+  background-color: #fbfafa;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 80%;
+  margin-bottom: 20px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+}
+
+/* Imagem do personagem */
+.artigo-imagem {
+  flex: 1;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.artigo-imagem img {
+  border-radius: 8px;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Texto lado da imagem */
+.artigo-texto {
+  flex: 2;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.artigo-texto p {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.5;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* "Ler mais..." */
+.artigo-texto a {
+  color: #007bff;
+  text-decoration: none;
+  margin-top: 10px;
+  align-self: flex-start;
+}
+
+.artigo-texto a:hover {
+  text-decoration: underline;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .artigo {
+    flex-direction: column;
+    width: 100%;
   }
-  to {
-    transform: rotate(360deg);
+
+  .artigo-imagem,
+  .artigo-texto {
+    flex: none;
+    width: 100%;
   }
 }
